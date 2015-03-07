@@ -47,8 +47,7 @@ def detail(row_id):
 	for object in object_list:
 		if object['id'] == row_id:
 			return render_template(template, object=object)
-
-
+	
 # this will return debug information, and we will allow it to reload when we update our data	
 if __name__ == "__main__":
 	app.run(debug=True, use_reloader=True)
