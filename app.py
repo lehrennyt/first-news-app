@@ -34,7 +34,20 @@ def index():
 	template = 'index.html'
 	object_list = get_csv()
 	return render_template(template, object_list = object_list)
-	
+
+# now we're creating a link for the detail pages to link to
+# we're going to take an id from the spreadsheet
+# we're going to use that id for naming our new web pages
+# the below will be a dynamically named page
+
+@app.route("/<row_id>/")
+def detail(row_id):
+	template = "detail.html"
+	object_list = get_csv()
+	for object in object_list:
+		if object['id'] == row_id:
+			return render_template(template, object=object)
+
 
 # this will return debug information, and we will allow it to reload when we update our data	
 if __name__ == "__main__":

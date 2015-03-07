@@ -5,22 +5,22 @@
 		<h1>Deaths during the LA riots</h1>
 		<table border=1 cellpaddng = 7>
 			<tr>
-			<th>Name</th>
-			<th>Date</th>
-			<th>Type of Death</th>
-			<th>Address</th>
-			<th>Age</th>
-			<th>Sex</th>
-			<th>Race</th>
-			{% for row in object_list %}
+				<th>Name</th>
+				<th>Date</th>
+				<th>Type of Death</th>
+				<th>Address</th>
+				<th>Age</th>
+				<th>Sex</th>
+				<th>Race</th>
+		{% for row in object_list %}
 			<tr>
-			<td>{{ row.full_name }}</td>
-			<td>{{ row.date }}</td>
-			<td>{{ row.type }}</td>
-			<td>{{ row.address }}</td>
-			<td>{{ row.age }}</td>
-			<td>{{ row.gender }}</td>
-			<td>{{ row.race }}</td>
+				<td><a href="/{{ row.id }}/">{{ row.full_name }}</a></td>
+				<td>{{ row.date }}</td>
+				<td>{{ row.type }}</td>
+				<td>{{ row.address }}</td>
+				<td>{{ row.age }}</td>
+				<td>{{ row.gender }}</td>
+				<td>{{ row.race }}</td>
 			</tr>
 			{% endfor %}
 		</table>	
